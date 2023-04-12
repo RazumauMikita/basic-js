@@ -13,8 +13,12 @@ const { NotImplementedError } = require('../extensions/index.js');
  * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
  * 
  */
+function UserException(message) {
+  this.message = message;
+  this.name = "Error";
+}
 function transform(arr) {
-  if (!(arr instanceof Array)) return '\'arr\' parameter must be an instance of the Array!';
+  if (!(arr instanceof Array)) throw new UserException('\'arr\' parameter must be an instance of the Array!');
   let res = [];
   for(let i = 0; i < arr.length; i++) {
     if(arr[i] == '--discard-next') {

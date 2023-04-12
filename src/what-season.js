@@ -26,7 +26,9 @@ function getSeason(date = 0) {
   
 
   const seasons = ['winter', 'spring', 'summer', 'autumn'];
+  
   let month = date.getMonth()
+
   if(month == 11 || month == 1 || month == 0) return seasons[0];
   if(month == 2 || month == 3 || month == 4) return seasons[1];
   if(month == 5 || month == 6 || month == 7) return seasons[2];
