@@ -35,8 +35,8 @@ class VigenereCipheringMachine {
     
     let result = [];
   let res = '';
-    for (let i = 0; i < text.length; i++) {
-      if(text2[i] === '!' || text2[i] === '1' || text2[i] === '2' || text2[i] === '3' || text2[i] === '4' || text2[i] === ',' || text2[i] === '.' || text2[i] === ':') {
+    for (let i = 0; i < text2.length; i++) {
+      if(text2[i].match(/[a-z]/) == null) {
         result.push(text2[i])
       } else {
         let letterIndx = text2.charCodeAt(i) - codeA;
@@ -70,7 +70,7 @@ class VigenereCipheringMachine {
       let result = [];
     
       for (let i = 0; i < text2.length; i++) {
-          if (text2[i] === '!' || text2[i] === '^' || text2[i] === ',' || text2[i] === ':' || text2[i] === ")") {
+          if (text2[i].match(/[a-z]/) == null) {
               result.push(text2[i]);
           } else {
               let letterIndx = text2.charCodeAt(i) - codeA;
